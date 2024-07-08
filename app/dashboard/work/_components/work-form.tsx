@@ -4,22 +4,17 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import axios from "axios";
-import { redirect, useRouter } from "next/navigation";
-
-import DashboardLayout from "@/layouts/DashboardLayout";
+import { useRouter } from "next/navigation";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 import {
-  Framework,
   Work,
-  WorkCategory,
-  initalWork,
   useWorkCategoryStore,
   useWorkFrameworkStore,
-} from "@/store/WorkStore";
+} from "@/store/work-store";
 import { cn } from "@/lib/utils";
 import { toast } from "@/components/ui/use-toast";
 
@@ -40,23 +35,6 @@ const projectSchema = z.object({
     .array(z.string().min(1, "Framework is required"))
     .nonempty("At least one Framework item is required"),
 });
-
-//* Category and Framework selection components
-const SelectableItem: React.FC<{
-  selected: boolean;
-  onClick: () => void;
-  children: React.ReactNode;
-}> = ({ selected, onClick, children }) => (
-  <div
-    className={cn(
-      selected ? "bg-primary text-primary-foreground" : "",
-      "w-fit rounded border border-zinc-500 px-4 py-2",
-    )}
-    onClick={onClick}
-  >
-    {children}
-  </div>
-);
 
 // Define the TypeScript type from the schema
 type WorkFormData = z.infer<typeof projectSchema>;
@@ -326,5 +304,22 @@ const SelectableList: React.FC<{
       ))}
     </div>
     {error && <p>{error}</p>}
+  </div>
+);
+
+//* Category and Framework selection components
+const SelectableItem: React.FC<{
+  selected: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}> = ({ selected, onClick, children }) => (
+  <div
+    className={cn(
+      selected ? "bg-primary text-primary-foreground" : "",
+      "w-fit rounded border border-zinc-500 px-4 py-2",
+    )}
+    onClick={onClick}
+  >
+    {children}
   </div>
 );

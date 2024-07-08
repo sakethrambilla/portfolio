@@ -1,6 +1,6 @@
 import React from "react";
-import UploadImage from "./UploadImage";
-import ImageDisplay from "./ImageDisplay";
+import UploadImage from "./upload-image";
+import ImageDisplay from "./image-display";
 
 const ImageCollection = () => {
   return (

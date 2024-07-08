@@ -1,15 +1,11 @@
-import DashboardLayout from "@/layouts/DashboardLayout";
-import React from "react";
-import WorkForm from "../Components/WorkForm";
-import { initalWork } from "@/store/WorkStore";
+import WorkForm from "../_components/work-form";
+import { initalWork } from "@/store/work-store";
 
 const DashboardWork = () => {
   return (
-    <DashboardLayout heading="Add Work">
-      <div className="h-full min-h-[100vh] w-full border-l p-10">
-        <WorkForm currentWork={initalWork} />
-      </div>
-    </DashboardLayout>
+    <div className="h-full min-h-[100vh] w-full border-l p-10">
+      <WorkForm currentWork={initalWork} />
+    </div>
   );
 };
 

@@ -10,7 +10,7 @@ const Navbar = () => {
     <>
       {/* Desktop navbar */}
       <div className="z-20 h-fit w-full p-4">
-        <div className="font-cormorant_garamond flex w-full flex-row items-center justify-between rounded-full bg-white/5 px-8 py-4 backdrop-blur-md">
+        <div className="flex w-full flex-row items-center justify-between rounded-full bg-white/5 px-8 py-4 font-cormorant_garamond backdrop-blur-md">
           <Link href={"/"}>
             <p className="font-cormorant_garamond text-2xl text-primary">
               Sakethrambilla
@@ -46,12 +46,12 @@ const Navbar = () => {
             >
               Work
             </Link>
-            {/* <Link
+            <Link
               href="/blog"
               className="transition duration-300 hover:scale-110"
             >
               Blog
-            </Link> */}
+            </Link>
 
             <Link
               href="/contact"
@@ -66,7 +66,7 @@ const Navbar = () => {
       {/* Mobile Navbar */}
       <div
         className={cn(
-          "font-cormorant_garamond absolute z-50 flex h-full w-full flex-col gap-12 bg-background px-10 py-10",
+          "absolute z-50 flex h-full w-full flex-col gap-12 bg-background px-10 py-10 font-cormorant_garamond",
           menuOpen ? "flex" : "hidden",
         )}
       >
@@ -92,12 +92,12 @@ const Navbar = () => {
           >
             Work
           </Link>
-          {/* <Link
+          <Link
             href="/blog"
             className="transition duration-300 hover:scale-110"
           >
             Blog
-          </Link> */}
+          </Link>
 
           <Link href="/contact" className="">
             Contact

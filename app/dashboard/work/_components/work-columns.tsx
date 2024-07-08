@@ -2,8 +2,8 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import { MoreHorizontal } from "lucide-react";
-import WorkActions from "../Components/WorkActions";
-import { Work } from "@/store/WorkStore";
+import WorkActions from "./work-actions";
+import { Work } from "@/store/work-store";
 
 export const Workcolumns: ColumnDef<Work>[] = [
   {
@@ -13,6 +13,11 @@ export const Workcolumns: ColumnDef<Work>[] = [
   {
     accessorKey: "description",
     header: "Description",
+    cell: ({ row }) => {
+      return (
+        <div className="">{row.original.description.substring(0, 140)}</div>
+      );
+    },
   },
   {
     accessorKey: "createdAt",

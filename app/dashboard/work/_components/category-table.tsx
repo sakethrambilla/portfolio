@@ -1,11 +1,10 @@
 "use client";
-import { Workcolumns } from "../(main)/work-columns";
-import { Button } from "@/components/ui/button";
-import { CategoryColumns } from "../(main)/category-columns";
-import AddCategory from "./AddCategory";
-import { useWorkCategoryStore } from "@/store/WorkStore";
+import { CategoryColumns } from "./category-columns";
+
+import { useWorkCategoryStore } from "@/store/work-store";
 import { useEffect } from "react";
 import { DataTable } from "@/components/data-table";
+import AddCategory from "@/app/dashboard/work/_components/AddCategory";
 
 const CategoryTable = () => {
   const workCategories = useWorkCategoryStore((state) => state.workCategories);

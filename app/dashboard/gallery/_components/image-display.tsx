@@ -1,5 +1,5 @@
 import React from "react";
-import ImageList from "./ImageList";
+import ImageList from "./image-list";
 
 const ImageDisplay = () => {
   return (

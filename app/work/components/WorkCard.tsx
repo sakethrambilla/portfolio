@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { Work } from "@/store/WorkStore";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

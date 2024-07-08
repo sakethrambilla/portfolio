@@ -1,25 +1,12 @@
 "use client";
 
-import { useEditor, EditorContent } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
+import { EditorContent } from "@tiptap/react";
 import TextEditorButtons from "./TextEditorButtons";
-import { extensions } from "@/lib/extensions";
 
-const Tiptap = () => {
-  const editor = useEditor({
-    editorProps: {
-      attributes: {
-        class:
-          "border prose bg-white max-w-none border-gray-400 p-4 w-full min-h-[60vh] max-h-[60vh] outline-none overflow-y-auto",
-      },
-    },
-    extensions: extensions,
-    content: "<p>Hello World! 🌎️</p>",
-  });
-
+const Tiptap = ({ editor }: any) => {
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center gap-4">
-      <div className="w-[90vw] lg:w-[60vw]">
+    <div className="flex h-full w-full flex-col items-start justify-center gap-4">
+      <div className="w-full overflow-hidden rounded-xl">
         <TextEditorButtons editor={editor} />
         <EditorContent editor={editor} />
       </div>

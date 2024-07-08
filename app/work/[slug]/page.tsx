@@ -19,7 +19,7 @@ const SinglePost = async ({ params }: { params: any }) => {
       frameworks: {
         select: {
           image: true,
-          name: true,
+          title: true,
         },
       },
       categories: {
@@ -39,7 +39,7 @@ const SinglePost = async ({ params }: { params: any }) => {
   return (
     <PageLayout>
       <div className="flex h-full min-h-[100vh] w-full flex-col items-start justify-start gap-14 px-4 py-8 lg:p-20">
-        <h1 className="font-cormorant_garamond flex w-[90%] items-start justify-start text-center text-3xl font-semibold lg:text-6xl">
+        <h1 className="flex w-[90%] items-start justify-start text-center font-cormorant_garamond text-3xl font-semibold lg:text-6xl">
           {data!.title}
         </h1>
         <div className="flex h-full w-full flex-col items-center justify-center gap-14 lg:flex-row lg:items-start">

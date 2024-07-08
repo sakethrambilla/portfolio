@@ -1,6 +1,6 @@
 "use client";
 import { toast } from "@/components/ui/use-toast";
-import { Work, useWorkStore } from "@/store/WorkStore";
+import { Work, useWorkStore } from "@/store/work-store";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,

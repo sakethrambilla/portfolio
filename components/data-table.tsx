@@ -1,11 +1,15 @@
 "use client";
-
+import * as React from "react";
 import {
   ColumnDef,
+  SortingState,
+  ColumnFiltersState,
   flexRender,
   getCoreRowModel,
   useReactTable,
+  getFilteredRowModel,
   getPaginationRowModel,
+  getSortedRowModel,
 } from "@tanstack/react-table";
 
 import {
@@ -17,6 +21,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
+import { Input } from "./ui/input";
+import { Search } from "lucide-react";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -27,15 +33,38 @@ export function DataTable<TData, TValue>({
   columns,
   data,
 }: DataTableProps<TData, TValue>) {
+  const [sorting, setSorting] = React.useState<SortingState>([]);
+  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
+    [],
+  );
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+    onSortingChange: setSorting,
+    getSortedRowModel: getSortedRowModel(),
+    onColumnFiltersChange: setColumnFilters,
+    getFilteredRowModel: getFilteredRowModel(),
+    state: {
+      sorting,
+      columnFilters,
+    },
   });
 
   return (
-    <>
+    <div className="flex flex-col gap-4">
+      <div className="flex w-fit items-center rounded-lg border-2 bg-secondary px-4">
+        <Search size={20} />
+        <input
+          placeholder="Filter Blogs..."
+          value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
+          onChange={(event) =>
+            table.getColumn("title")?.setFilterValue(event.target.value)
+          }
+          className="max-w-sm rounded bg-transparent px-4 py-2 focus:outline-none"
+        />
+      </div>
       <div className="rounded-md border">
         <Table>
           <TableHeader>
@@ -105,6 +134,6 @@ export function DataTable<TData, TValue>({
           Next
         </Button>
       </div>
-    </>
+    </div>
   );
 }

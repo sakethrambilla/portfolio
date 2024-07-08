@@ -25,6 +25,7 @@ import {
 import FontStyleDropDown from "./FontStyleDropDown";
 
 import { FaYoutube } from "react-icons/fa";
+import { Code } from "lucide-react";
 
 const TextEditorButtons = ({ editor }: any) => {
   const [textColor, setTextColor] = useState("");
@@ -34,11 +35,11 @@ const TextEditorButtons = ({ editor }: any) => {
 
   const addYoutubeVideo = () => {
     const url = prompt("Enter YouTube URL");
-
+    console.log(url);
     if (url) {
       editor.commands.setYoutubeVideo({
         src: url,
-        // width: Math.max(320, parseInt(widthRef.current.value, 10)) || 640,
+        // width: Math.max(325, parseInt(widthRef.current.value, 10)) || 640,
         // height: Math.max(180, parseInt(heightRef.current.value, 10)) || 480,
       });
     }
@@ -76,7 +77,7 @@ const TextEditorButtons = ({ editor }: any) => {
     return null;
   }
   return (
-    <div className="flex h-fit w-full items-center justify-start gap-1 bg-gray-700 px-4 py-2 text-white">
+    <div className="flex h-fit w-full flex-wrap items-center justify-start gap-4 rounded-t bg-muted px-4 py-2 text-white">
       {/* Bold , Italic and Underline */}
       <div className="flex h-full w-fit flex-row items-center">
         {/* Bold */}
@@ -87,7 +88,7 @@ const TextEditorButtons = ({ editor }: any) => {
             editor.isActive("bold") ? "bg-gray-800" : ""
           } flex items-center justify-center rounded-[2px] p-1 text-3xl`}
         >
-          <MdFormatBold size={15} />
+          <MdFormatBold size={25} />
         </button>
 
         {/* Italic */}
@@ -97,7 +98,7 @@ const TextEditorButtons = ({ editor }: any) => {
             editor.isActive("italic") ? "bg-gray-800" : ""
           } flex items-center justify-center p-1 text-3xl`}
         >
-          <MdFormatItalic size={15} />
+          <MdFormatItalic size={25} />
         </button>
 
         {/* Underline */}
@@ -107,7 +108,7 @@ const TextEditorButtons = ({ editor }: any) => {
             editor.isActive("underline") ? "bg-gray-800" : ""
           } flex items-center justify-center rounded-[2px] p-1 text-3xl`}
         >
-          <MdFormatUnderlined size={15} />
+          <MdFormatUnderlined size={25} />
         </button>
       </div>
 
@@ -165,7 +166,7 @@ const TextEditorButtons = ({ editor }: any) => {
             editor.isActive({ textAlign: "left" }) ? "bg-gray-800" : ""
           } flex items-center justify-center rounded-[2px] p-1 text-3xl`}
         >
-          <GrTextAlignLeft size={15} />
+          <GrTextAlignLeft size={25} />
         </button>
 
         {/* Center Align  */}
@@ -175,7 +176,7 @@ const TextEditorButtons = ({ editor }: any) => {
             editor.isActive({ textAlign: "center" }) ? "bg-gray-800" : ""
           } flex items-center justify-center rounded-[2px] p-1 text-3xl`}
         >
-          <GrTextAlignCenter size={15} />
+          <GrTextAlignCenter size={25} />
         </button>
 
         {/* Right Align */}
@@ -185,7 +186,7 @@ const TextEditorButtons = ({ editor }: any) => {
             editor.isActive({ textAlign: "right" }) ? "bg-gray-800" : ""
           } flex items-center justify-center rounded-[2px] p-1 text-3xl`}
         >
-          <GrTextAlignRight size={15} />
+          <GrTextAlignRight size={25} />
         </button>
       </div>
 
@@ -202,7 +203,7 @@ const TextEditorButtons = ({ editor }: any) => {
               : ""
           } flex items-center justify-center rounded-[2px] p-1 text-3xl`}
         >
-          <LuHeading1 size={15} />
+          <LuHeading1 size={25} />
         </button>
 
         {/* Heading 2 */}
@@ -216,7 +217,7 @@ const TextEditorButtons = ({ editor }: any) => {
               : ""
           } flex items-center justify-center rounded-[2px] p-1 text-3xl`}
         >
-          <LuHeading2 size={15} />
+          <LuHeading2 size={25} />
         </button>
 
         {/* Heading 3 */}
@@ -230,7 +231,7 @@ const TextEditorButtons = ({ editor }: any) => {
               : ""
           } flex items-center justify-center rounded-[2px] p-1 text-3xl`}
         >
-          <LuHeading3 size={15} />
+          <LuHeading3 size={25} />
         </button>
       </div>
 
@@ -243,7 +244,7 @@ const TextEditorButtons = ({ editor }: any) => {
             editor.isActive("bulletList") ? "bg-gray-800 text-white" : ""
           } flex items-center justify-center rounded-[2px] p-1 text-3xl`}
         >
-          <MdFormatListBulleted size={15} />
+          <MdFormatListBulleted size={25} />
         </button>
 
         {/* Ordered List */}
@@ -253,7 +254,7 @@ const TextEditorButtons = ({ editor }: any) => {
             editor.isActive("orderedList") ? "bg-gray-800 text-white" : ""
           } flex items-center justify-center rounded-[2px] p-1 text-3xl`}
         >
-          <MdFormatListNumbered size={15} />
+          <MdFormatListNumbered size={25} />
         </button>
 
         {/* Indent Increase */}
@@ -266,7 +267,7 @@ const TextEditorButtons = ({ editor }: any) => {
               : ""
           } flex items-center justify-center rounded-[2px] p-1 text-3xl`}
         >
-          <MdFormatIndentIncrease size={15} />
+          <MdFormatIndentIncrease size={25} />
         </button>
 
         {/* Indent Decrease */}
@@ -279,7 +280,7 @@ const TextEditorButtons = ({ editor }: any) => {
               : ""
           } flex items-center justify-center rounded-[2px] p-1 text-3xl`}
         >
-          <MdFormatIndentDecrease size={15} />
+          <MdFormatIndentDecrease size={25} />
         </button>
       </div>
 
@@ -292,7 +293,7 @@ const TextEditorButtons = ({ editor }: any) => {
             editor.isActive("blockquote") ? "bg-gray-800 text-white" : ""
           } flex items-center justify-center rounded-[2px] p-1 text-3xl`}
         >
-          <MdFormatQuote size={15} />
+          <MdFormatQuote size={25} />
         </button>
 
         {/* Hard Brake */}
@@ -300,7 +301,7 @@ const TextEditorButtons = ({ editor }: any) => {
           onClick={() => editor.chain().focus().setHardBreak().run()}
           className={`flex items-center justify-center rounded-[2px] p-1 text-3xl`}
         >
-          <MdOutlineWrapText size={15} />
+          <MdOutlineWrapText size={25} />
         </button>
 
         {/* Horizontal Line */}
@@ -308,19 +309,18 @@ const TextEditorButtons = ({ editor }: any) => {
           onClick={() => editor.chain().focus().setHorizontalRule().run()}
           className={`flex items-center justify-center rounded-[2px] p-1 text-3xl`}
         >
-          <MdOutlineHorizontalRule size={15} />
+          <MdOutlineHorizontalRule size={25} />
         </button>
       </div>
 
-      <FontStyleDropDown editor={editor} />
-
       {/* Image, Link and Youtube */}
-      <div className="flex flex-row items-center">
+      <div className="flex flex-row items-center gap-1">
+        <FontStyleDropDown editor={editor} />
         <button
           onClick={addImage}
           className={`flex items-center justify-center rounded-[2px] p-1 text-3xl`}
         >
-          <MdImage size={15} />
+          <MdImage size={25} />
         </button>
         <button
           onClick={addLink}
@@ -328,13 +328,19 @@ const TextEditorButtons = ({ editor }: any) => {
             editor.isActive("link") ? "bg-gray-800 text-white" : ""
           } flex items-center justify-center rounded-[2px] p-1 text-3xl`}
         >
-          <MdInsertLink size={15} />
+          <MdInsertLink size={25} />
         </button>
         <button
           onClick={addYoutubeVideo}
           className={`flex items-center justify-center rounded-[2px] p-1 text-3xl`}
         >
-          <FaYoutube size={15} />
+          <FaYoutube size={25} />
+        </button>
+        <button
+          onClick={() => editor.chain().focus().toggleCodeBlock().run()}
+          className={editor.isActive("codeBlock") ? "is-active" : ""}
+        >
+          <Code size={25} />
         </button>
       </div>
     </div>

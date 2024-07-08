@@ -23,8 +23,12 @@ import Subscript from "@tiptap/extension-subscript";
 import Superscript from "@tiptap/extension-superscript";
 import Image from "@tiptap/extension-image";
 import Youtube from "@tiptap/extension-youtube";
-
+import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight";
 import History from "@tiptap/extension-history";
+import css from "highlight.js/lib/languages/css";
+import js from "highlight.js/lib/languages/javascript";
+import python from "highlight.js/lib/languages/python";
+import { common, createLowlight } from "lowlight";
 
 export const extensions = [
   Document,
@@ -68,4 +72,7 @@ export const extensions = [
   }),
   // ImageResize.configure({}),
   History,
+  CodeBlockLowlight.configure({
+    lowlight: createLowlight(common),
+  }),
 ];

@@ -1,11 +1,8 @@
 "use client";
 import axios from "axios";
 import React, { useEffect } from "react";
-import { Workcolumns } from "../(main)/work-columns";
-import { Button } from "@/components/ui/button";
-import { CategoryColumns } from "../(main)/category-columns";
 import Image from "next/image";
-import { Framework, useWorkFrameworkStore } from "@/store/WorkStore";
+import { Framework, useWorkFrameworkStore } from "@/store/work-store";
 import AddTechStack from "./AddTechStack";
 import { toast } from "@/components/ui/use-toast";
 

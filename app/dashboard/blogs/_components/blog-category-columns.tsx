@@ -2,22 +2,23 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import { MoreHorizontal } from "lucide-react";
-import CategoryActions from "../Components/CategoryActions";
+import CategoryActions from "./blog-category-actions";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
 export type CategoryType = {
   id: string;
   slug: string;
-  name: string;
+  title: string;
+  image: string;
   color: string;
   createdAt: Date;
 };
 
 export const CategoryColumns: ColumnDef<CategoryType>[] = [
   {
-    accessorKey: "name",
-    header: "Name",
+    accessorKey: "title",
+    header: "Title",
   },
   {
     accessorKey: "slug",

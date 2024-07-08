@@ -101,7 +101,7 @@ model WorkCategory{
 model Framework{
   id            String          @id @default(cuid())
   slug String @unique
-  name String @unique
+  title String @unique
   image String
   works Work[]
   createdAt DateTime @default(now())
@@ -111,4 +111,28 @@ model PageCount{
   id            String          @id @default(cuid())
   name String @unique
   viewCount Int
+}
+
+model Blog{
+  id            String          @id @default(cuid())
+  title String
+  slug String @unique()
+  description String
+  image String
+  body String 
+  published Boolean @default(true)
+  categories BlogCategory[] 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model BlogCategory{
+  id String @id @default(cuid())
+  title String 
+  image String
+  slug String @unique
+  color String
+  blogs Blog[]
+  createdAt DateTime @default(now())
+
 }

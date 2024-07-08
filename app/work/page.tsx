@@ -5,14 +5,15 @@ import WorkList from "./components/WorkList";
 import { ThemeToggle } from "@/components/theme-toggle";
 import Navbar from "../../components/Navbar";
 import { headers } from "next/headers";
+import { updateCount } from "@/lib/utils";
 
 export type PageProps = {
   params: { [key: string]: string | string[] | undefined };
   searchParams?: { [key: string]: string | string[] | undefined };
 };
-const Work = async (props: PageProps) => {
-  const headersList = headers();
 
+const Work = async (props: PageProps) => {
+  updateCount("work");
   return (
     <PageLayout>
       <div className="h-full min-h-[100vh] w-full p-6 lg:p-8">

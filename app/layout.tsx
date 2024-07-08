@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Red_Hat_Display } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
+import { headers } from "next/headers";
 
 const cormorant_garamond = Cormorant_Garamond({
   weight: ["300", "400", "500", "600", "700"],

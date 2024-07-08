@@ -11,15 +11,15 @@ import { twMerge } from "tailwind-merge";
 const FontStyleDropDown = ({ editor }: any) => {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="text-[10px]">Font</DropdownMenuTrigger>
-      <DropdownMenuContent className="w-10">
+      <DropdownMenuTrigger className="text-xl">Font</DropdownMenuTrigger>
+      <DropdownMenuContent className="w-56" align="start">
         <DropdownMenuItem
           onClick={() => editor.chain().focus().setFontFamily("Inter").run()}
           className={twMerge(
             editor.isActive("textStyle", { fontFamily: "Inter" })
               ? "is-active"
               : "",
-            "text-[7px]",
+            "px-4 text-lg",
           )}
         >
           Inter{" "}
@@ -36,7 +36,7 @@ const FontStyleDropDown = ({ editor }: any) => {
             editor.isActive("textStyle", { fontFamily: "Inter" })
               ? "is-active"
               : "",
-            "text-[7px]",
+            "px-4 text-lg",
           )}
         >
           Comic Sans Ms
@@ -47,7 +47,7 @@ const FontStyleDropDown = ({ editor }: any) => {
             editor.isActive("textStyle", { fontFamily: "Inter" })
               ? "is-active"
               : "",
-            "text-[7px]",
+            "px-4 text-lg",
           )}
         >
           Serif
@@ -60,7 +60,7 @@ const FontStyleDropDown = ({ editor }: any) => {
             editor.isActive("textStyle", { fontFamily: "Inter" })
               ? "is-active"
               : "",
-            "text-[7px]",
+            "px-4 text-lg",
           )}
         >
           Monospace
