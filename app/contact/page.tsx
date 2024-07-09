@@ -1,12 +1,8 @@
-import Image from "next/image";
-import React from "react";
 import Navbar from "../../components/Navbar";
 import ContactForm from "./components/contact-form";
 import SocialConnect from "./components/social-connect";
-import { updateCount } from "@/lib/utils";
 
 const Contact = () => {
-  updateCount("contact");
   return (
     <div className="flex h-full min-h-screen flex-col items-center justify-start">
       <Navbar />

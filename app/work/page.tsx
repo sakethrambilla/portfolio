@@ -1,11 +1,5 @@
 import { PageLayout } from "@/layouts/PageLayout";
-import React from "react";
-import prisma from "../../lib/db";
 import WorkList from "./components/WorkList";
-import { ThemeToggle } from "@/components/theme-toggle";
-import Navbar from "../../components/Navbar";
-import { headers } from "next/headers";
-import { updateCount } from "@/lib/utils";
 
 export type PageProps = {
   params: { [key: string]: string | string[] | undefined };
@@ -13,7 +7,6 @@ export type PageProps = {
 };
 
 const Work = async (props: PageProps) => {
-  updateCount("work");
   return (
     <PageLayout>
       <div className="h-full min-h-[100vh] w-full p-6 lg:p-8">

@@ -107,11 +107,7 @@ model Framework{
   createdAt DateTime @default(now())
 }
 
-model PageCount{
-  id            String          @id @default(cuid())
-  name String @unique
-  viewCount Int
-}
+
 
 model Blog{
   id            String          @id @default(cuid())
