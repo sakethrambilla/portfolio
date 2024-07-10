@@ -299,7 +299,7 @@ const SelectableList: React.FC<{
           selected={selected[i]}
           onClick={() => onSelect(i)}
         >
-          {item.name}
+          {item.title}
         </SelectableItem>
       ))}
     </div>

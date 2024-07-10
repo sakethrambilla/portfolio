@@ -17,7 +17,7 @@ const BlogCard = ({ blog }: { blog: any }) => {
         alt="Blog Post Image"
         width={100}
         height={100}
-        className="h-full w-full rounded-lg object-cover lg:h-[400px]"
+        className="h-full w-full rounded-lg object-cover lg:h-[300px] xl:h-[400px]"
       />
       <div className="flex flex-col gap-4">
         <div className="flex w-full flex-row items-center justify-between pr-5">

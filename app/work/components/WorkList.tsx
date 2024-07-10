@@ -24,7 +24,7 @@ const fetchPost = async ({ take = PAGE_SIZE, skip = 0 }) => {
       description: true,
       categories: {
         select: {
-          name: true,
+          title: true,
           color: true,
         },
       },

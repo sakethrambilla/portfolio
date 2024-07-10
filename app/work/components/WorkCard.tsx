@@ -3,8 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-interface WorkCardProps {}
-
 const WorkCard = ({ work }: { work: any }) => {
   return (
     <Link
@@ -22,7 +20,7 @@ const WorkCard = ({ work }: { work: any }) => {
         <h2 className="font-cormorant_garamond text-2xl">{work.title}</h2>
         <div className="flex flex-wrap gap-2">
           {work.categories.map(
-            (category: { name: string; color: string }, index: number) => (
+            (category: { title: string; color: string }, index: number) => (
               <div
                 className={cn(
                   "flex w-fit flex-col rounded-full px-2 py-1 text-sm",
@@ -30,7 +28,7 @@ const WorkCard = ({ work }: { work: any }) => {
                 )}
                 key={index}
               >
-                {category.name}
+                {category.title}
               </div>
             ),
           )}

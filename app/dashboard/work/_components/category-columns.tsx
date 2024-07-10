@@ -7,14 +7,14 @@ import CategoryActions from "./category-actions";
 export type CategoryType = {
   id: string;
   slug: string;
-  name: string;
+  title: string;
   color: string;
   createdAt: Date;
 };
 
 export const CategoryColumns: ColumnDef<CategoryType>[] = [
   {
-    accessorKey: "name",
+    accessorKey: "title",
     header: "Name",
   },
   {

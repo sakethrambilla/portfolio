@@ -40,7 +40,7 @@ const BlogForm: React.FC<BlogFormProps> = ({ selectedBlog }) => {
   const [blogbody, setBlogbody] = useState(selectedBlog.body || "");
   const [blogPulished, setBlogPublished] = useState(false);
   const blogCategories = useBlogCategoryStore((state) => state.blogCategories);
-  console.log(blogbody);
+
   const data = {
     title: selectedBlog.title || "",
     slug: selectedBlog.slug || "",
@@ -82,10 +82,10 @@ const BlogForm: React.FC<BlogFormProps> = ({ selectedBlog }) => {
     content: blogbody,
   });
 
-  console.log("Errors in the form :", errors);
-  console.log("Selected Cateogires :", categorySelect);
-  console.log("Data Cateogires :", getValues().categories);
-  console.log("Blog Published : ", blogPulished);
+  // console.log("Errors in the form :", errors);
+  // console.log("Selected Cateogires :", categorySelect);
+  // console.log("Data Cateogires :", getValues().categories);
+  // console.log("Blog Published : ", blogPulished);
 
   const handleSelect = (index: number) => {
     const isSelected = categorySelect[index];
@@ -107,7 +107,7 @@ const BlogForm: React.FC<BlogFormProps> = ({ selectedBlog }) => {
       published: blogPulished,
       categories: data.categories.filter((val) => val !== "batman"),
     };
-    console.log(updatedData);
+
     try {
       const url = "/api/blog";
       const payload = selectedBlog.id
@@ -124,11 +124,11 @@ const BlogForm: React.FC<BlogFormProps> = ({ selectedBlog }) => {
             ? "Blog has been updated"
             : "Blog is created",
         });
-        // router.push("/dashboard/blogs");
+        router.push("/dashboard/blogs");
       }
     } catch (error) {
       // Log any errors that occur during submission
-      // console.error("Error submitting project:", error);
+      console.error("Error submitting project:", error);
       toast({
         description: "Work not added to Database",
         variant: "destructive",

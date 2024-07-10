@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Blogs = () => {
   return (
-    <div className="relative flex h-full min-h-[100vh] flex-col gap-14 border-l-2">
+    <div className="relative flex h-full min-h-[100vh] w-full flex-col gap-14 border-l-2">
       <div className="flex h-fit w-full items-center justify-between border-b-2 p-4">
         <h4 className="text-xl">Blogs</h4>
         <Link href={"/dashboard/blogs/new"}>

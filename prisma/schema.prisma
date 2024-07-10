@@ -92,7 +92,7 @@ model Work{
 model WorkCategory{
   id            String          @id @default(cuid())
   slug String @unique
-  name String
+  title String
   works Work[]
   color String 
   createdAt DateTime @default(now())

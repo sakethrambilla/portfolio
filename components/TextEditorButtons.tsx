@@ -35,7 +35,7 @@ const TextEditorButtons = ({ editor }: any) => {
 
   const addYoutubeVideo = () => {
     const url = prompt("Enter YouTube URL");
-    console.log(url);
+
     if (url) {
       editor.commands.setYoutubeVideo({
         src: url,

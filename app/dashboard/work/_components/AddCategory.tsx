@@ -62,7 +62,7 @@ const Modal = ({ setModalOpen, modalOpen }: ModelProps) => {
 
   const handleSubmit = async () => {
     const response = await axios.post("/api/work/category", {
-      name: categoryName,
+      title: categoryName,
       slug: slugify(categoryName),
       color: selectedColor,
     });

@@ -1,11 +1,9 @@
 "use client";
 import { toast } from "@/components/ui/use-toast";
-import { useWorkCategoryStore } from "@/store/work-store";
-import { WorkCategory } from "@prisma/client";
+import { useWorkCategoryStore, WorkCategory } from "@/store/work-store";
 
 import axios from "axios";
 import { Trash } from "lucide-react";
-import { useState } from "react";
 
 const CategoryActions = ({ category }: { category: WorkCategory }) => {
   const deletePost = useWorkCategoryStore((state) => state.deleteWorkCategory);

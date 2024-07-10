@@ -13,7 +13,7 @@ export const GET = async () => {
 export const POST = async (request: Request) => {
   try {
     const data = await request.json();
-
+    console.log(data);
     const stack = await prisma.framework.create({
       data,
     });

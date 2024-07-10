@@ -47,7 +47,7 @@ const FrameworkList = () => {
               alt="Framework image"
               className="h-10 w-10 rounded"
             />
-            {skill.name}
+            {skill.title}
           </div>
         ))}
       </div>

@@ -73,7 +73,7 @@ export const useWorkStore = create<WorkState>()(
 export interface WorkCategory {
   id: string;
   slug: string;
-  name: string;
+  title: string;
   color: string;
   createdAt: Date;
 }
@@ -81,7 +81,7 @@ export interface WorkCategory {
 export const initalWorkCategory: WorkCategory = {
   id: "",
   slug: "",
-  name: "",
+  title: "",
   color: "",
   createdAt: new Date(),
 };
@@ -121,7 +121,7 @@ export const useWorkCategoryStore = create<WorkCategoryStore>()(
 export interface Framework {
   id: string;
   slug: string;
-  name: string;
+  title: string;
   image: string;
   createdAt: Date;
 }
@@ -129,7 +129,7 @@ export interface Framework {
 export const initalFramework: Framework = {
   id: "",
   slug: "",
-  name: "",
+  title: "",
   image: "",
   createdAt: new Date(),
 };
@@ -152,7 +152,7 @@ export const useWorkFrameworkStore = create<WorkFramework>()(
           framework: {
             ...state.framework,
             [field]: value,
-            slug: field === "name" ? slugify(value) : state.framework.slug,
+            slug: field === "title" ? slugify(value) : state.framework.slug,
           },
         }));
       },

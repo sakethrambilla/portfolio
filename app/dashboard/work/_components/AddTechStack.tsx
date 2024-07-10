@@ -44,7 +44,7 @@ const Modal = ({ setModalOpen, modalOpen }: ModelProps) => {
 
   const handleSubmit = async () => {
     const response = await axios.post("/api/work/framework", {
-      name: framework.name,
+      title: framework.title,
       slug: framework.slug,
       image: framework.image,
     });
@@ -67,7 +67,7 @@ const Modal = ({ setModalOpen, modalOpen }: ModelProps) => {
           type="text"
           className="rounded"
           placeholder="Add Name"
-          onChange={(e) => updateFramework("name", e.target.value)}
+          onChange={(e) => updateFramework("title", e.target.value)}
         />
         <Input
           type="text"

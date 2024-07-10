@@ -7,6 +7,8 @@ import prisma from "@/lib/db";
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
+import ImageSlider from "../components/ImageSlider";
 
 // Component to display a single post
 const SinglePost = async ({ params }: { params: any }) => {
@@ -24,7 +26,7 @@ const SinglePost = async ({ params }: { params: any }) => {
       },
       categories: {
         select: {
-          name: true,
+          title: true,
         },
       },
     },
@@ -43,13 +45,7 @@ const SinglePost = async ({ params }: { params: any }) => {
           {data!.title}
         </h1>
         <div className="flex h-full w-full flex-col items-center justify-center gap-14 lg:flex-row lg:items-start">
-          <Image
-            src={data!.images[0]}
-            width={100}
-            height={100}
-            className="h-full w-[90%] rounded-lg object-cover lg:w-[50%] lg:rounded-2xl"
-            alt="cover image"
-          />
+          <ImageSlider data={data} />
           <div className="flex h-full w-[90%] flex-col gap-8 lg:w-[50%]">
             <p className="text-lg lg:text-2xl">{data.description}</p>
             <div className="flex flex-row justify-start gap-4 lg:text-xl">
@@ -74,7 +70,7 @@ const SinglePost = async ({ params }: { params: any }) => {
               <div className="flex flex-wrap gap-4 lg:text-lg">
                 {data.categories.map((category, index) => (
                   <div className="rounded bg-white/5 px-4 py-2" key={index}>
-                    {category.name}
+                    {category.title}
                   </div>
                 ))}
               </div>

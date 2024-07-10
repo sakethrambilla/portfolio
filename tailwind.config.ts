@@ -18,6 +18,22 @@ const config = {
       },
     },
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            "--tw-prose-counters": "#fff",
+            // "--tw-prose-pre-bg": "#d9f19d",
+
+            maxWidth: "100vw",
+            li: {
+              p: {
+                margin: 0,
+              },
+            },
+            code: {},
+          },
+        },
+      },
       backgroundImage: {
         home: "radial-gradient(circle at top  center, #0D3735,rgb(0,0,0));",
       },

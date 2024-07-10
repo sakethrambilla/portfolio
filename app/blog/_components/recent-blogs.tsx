@@ -22,7 +22,7 @@ const RecentBlogs = async () => {
       },
     },
   });
-  console.log(data[0].categories);
+
   return (
     <div className="flex flex-col gap-8 py-10">
       <h1 className="w-full text-start font-cormorant_garamond text-4xl text-primary">
@@ -30,7 +30,7 @@ const RecentBlogs = async () => {
       </h1>
 
       {/* First Three  */}
-      <div className="h-fullw-full flex flex-col items-start justify-center gap-8 lg:h-[60vh] lg:flex-row lg:gap-12">
+      <div className="h-fullw-full flex flex-col items-start justify-center gap-8 lg:flex-row lg:gap-12 xl:h-[60vh]">
         {/*  First Blog*/}
         <Link href={`/blog/${data[0].slug}`} className="h-full lg:w-1/2">
           <div className="flex h-full w-full flex-col items-start justify-start gap-12">
@@ -39,9 +39,9 @@ const RecentBlogs = async () => {
               alt="Blog Post Image"
               width={100}
               height={100}
-              className="h-1/2 w-full rounded object-cover object-center"
+              className="h-2/3 w-full rounded object-cover object-center"
             />
-            <div className="flex h-1/2 flex-col items-start justify-start gap-8">
+            <div className="flex h-1/3 flex-col items-start justify-start gap-8">
               <h2 className="text-xl font-bold lg:text-3xl">{data[0].title}</h2>
               <p className="text-lg text-secondary-foreground">
                 {data[1].description.substring(1, 150)}
