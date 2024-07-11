@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { toast } from "@/components/ui/use-toast";
 import {
   useWorkCategoryStore,
   useWorkFrameworkStore,
@@ -51,6 +52,7 @@ const Modal = ({ setModalOpen, modalOpen }: ModelProps) => {
     if (response.data.status == 200) {
       fetchFrameworks();
       setModalOpen(!modalOpen);
+      toast({ description: "Framework is Added" });
     }
   };
   return (

@@ -1,6 +1,6 @@
 "use client";
 import { toast } from "@/components/ui/use-toast";
-import { blogCategory } from "@/store/blog-store";
+import { blogCategory, useBlogCategoryStore } from "@/store/blog-store";
 import { useWorkCategoryStore } from "@/store/work-store";
 import { WorkCategory } from "@prisma/client";
 
@@ -9,15 +9,17 @@ import { Trash } from "lucide-react";
 import { useState } from "react";
 
 const CategoryActions = ({ category }: { category: blogCategory }) => {
-  const deletePost = useWorkCategoryStore((state) => state.deleteWorkCategory);
+  const deleteBlogCategory = useBlogCategoryStore(
+    (state) => state.deleteBlogCategory,
+  );
 
   //* Delete a Post and refresh the Post list state
   const handleDeletePost = async () => {
-    await axios.delete("/api/work/category", { data: category });
-    await deletePost(category.id);
+    await axios.delete("/api/blog/category", { data: category });
+    await deleteBlogCategory(category.id);
 
     toast({
-      description: "Post deleted from Storage",
+      description: "Blog Category Deleted from Storage",
       variant: "destructive",
     });
   };

@@ -22,6 +22,10 @@ const RecentBlogs = async () => {
       },
     },
   });
+  console.log(data);
+  if (!data[0]) {
+    return <></>;
+  }
 
   return (
     <div className="flex flex-col gap-8 py-10">
