@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <>
       {/* Desktop navbar */}
-      <div className="z-20 h-fit w-full p-4">
+      <div className="z-0 h-fit w-full p-4">
         <div className="flex w-full flex-row items-center justify-between rounded-full bg-white/5 px-8 py-4 font-cormorant_garamond backdrop-blur-md">
           <Link href={"/"}>
             <p className="font-cormorant_garamond text-2xl text-primary">
