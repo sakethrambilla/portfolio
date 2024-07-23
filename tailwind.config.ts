@@ -19,8 +19,9 @@ const config = {
     },
     extend: {
       cursor: {
-        bcursor: "url(/images/cursor.png), default",
-        ocursor: "url(/images/view-work-cursor.svg), pointer",
+        bcursor: "url(/images/cursor.svg), default",
+
+        pointer: "url(/images/pointer.svg), pointer",
       },
       typography: {
         DEFAULT: {

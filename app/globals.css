@@ -131,3 +131,8 @@ pre {
     font-weight: 700;
   }
 }
+
+a,
+button {
+  @apply cursor-pointer;
+}

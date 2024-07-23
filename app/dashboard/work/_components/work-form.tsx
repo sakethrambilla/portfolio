@@ -17,6 +17,9 @@ import {
 } from "@/store/work-store";
 import { cn } from "@/lib/utils";
 import { toast } from "@/components/ui/use-toast";
+import Tiptap from "@/components/Tiptap";
+import { useEditor } from "@tiptap/react";
+import { extensions } from "@/lib/extensions";
 
 // * Define the schema using Zod
 const projectSchema = z.object({
@@ -79,6 +82,22 @@ const WorkForm: React.FC<WorkFormProps> = ({ currentWork }) => {
   } = useForm<WorkFormData>({
     resolver: zodResolver(projectSchema),
     defaultValues: data,
+  });
+
+  const editor = useEditor({
+    editorProps: {
+      attributes: {
+        class:
+          " prose lg:prose-lg prose-headings:text-gray-200 prose-h2:my-6 prose-h3:my-4 prose-p:m-0 prose-p:text-white prose-strong:text-gray-100 prose-li:text-gray-200 prose-img:w-full prose-img:rounded-xl prose-video:rounded-xl   rounded-b max-w-none border p-4 w-full h-[60vh] outline-none overflow-y-auto",
+      },
+    },
+    onUpdate({ editor }) {
+      const updatedBody = editor?.getHTML() as string;
+      // set(updatedBody);
+    },
+    extensions: extensions,
+
+    content: currentWork.description,
   });
 
   // console.log(errors);
@@ -169,7 +188,7 @@ const WorkForm: React.FC<WorkFormProps> = ({ currentWork }) => {
           error={errors.slug?.message}
         />
       </div>
-
+      {/* <Tiptap editor={editor} /> */}
       {/* Description */}
       <TextareaField
         label="Description"

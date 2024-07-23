@@ -4,7 +4,7 @@ import TextMask from "@/app/(home)/components/TextMask";
 
 export default function Home() {
   return (
-    <div className="cursor-bcursor">
+    <div className="">
       <Header />
       {/* <div className="h-[50vh] w-full"></div> */}
       <TextMask />

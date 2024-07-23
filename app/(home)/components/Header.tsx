@@ -15,6 +15,7 @@ const Header = () => {
         opacity: 0,
         // xPercent: "-100",
         zIndex: 0,
+        delay: 0.3,
       });
       t1.from("#intro-slider", {
         xPercent: "-100",
@@ -60,13 +61,13 @@ const Header = () => {
         id="intro-slider"
         className="absolute z-10 flex h-screen w-full flex-col items-start justify-center bg-primary p-14 font-cormorant_garamond tracking-tight text-background"
       >
-        <h1 id="title-1" className="text-4xl lg:text-9xl">
+        <h1 id="title-1" className="text-3xl lg:text-9xl">
           Software Engineer
         </h1>
-        <h1 id="title-2" className="text-4xl lg:text-9xl">
+        <h1 id="title-2" className="text-3xl lg:text-9xl">
           Computer Science Grad
         </h1>
-        <h1 id="title-3" className="text-4xl lg:text-9xl">
+        <h1 id="title-3" className="text-3xl lg:text-9xl">
           Freelancer
         </h1>
       </div>

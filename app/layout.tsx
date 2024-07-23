@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <link rel="icon" href="/images/logo.svg" sizes="any" />
       <body
-        className={` ${redHatDisplay.variable} ${cormorant_garamond.variable} dark`}
+        className={` ${redHatDisplay.variable} ${cormorant_garamond.variable} dark cursor-bcursor`}
       >
         <ThemeProvider
           attribute="class"
