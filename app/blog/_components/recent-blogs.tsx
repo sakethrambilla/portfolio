@@ -22,7 +22,7 @@ const RecentBlogs = async () => {
       },
     },
   });
-  console.log(data);
+  // console.log(data);
   if (!data[0]) {
     return <></>;
   }

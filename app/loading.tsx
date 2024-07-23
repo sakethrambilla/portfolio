@@ -1,17 +1,10 @@
-import Image from "next/image";
+import { Code } from "lucide-react";
 import React from "react";
 
 const loading = () => {
   return (
     <div className="flex h-[100vh] w-full items-center justify-center">
-      <div className="h-1/2 w-1/2">
-        <Image
-          src="/images/loading.svg"
-          fill
-          alt="loading image"
-          className="h-32 w-32"
-        />
-      </div>
+      <Code className="h-1/4 w-1/4 animate-spin text-primary repeat-infinite" />
     </div>
   );
 };

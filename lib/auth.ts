@@ -9,18 +9,6 @@ export const authOptions = {
   adapter: PrismaAdapter(prisma) as Adapter,
   providers: [
     GoogleProvider({
-      // profile(profile) {
-      //   console.log("Profile Google: ", profile);
-      //   let userRole = "Google User";
-      //   if (profile?.email == "billasaketh@gmail.com") {
-      //     userRole = "admin";
-      //   }
-      //   return {
-      //     ...profile,
-      //     id: profile.sub,
-      //     role: userRole,
-      //   };
-      // },
       clientId: process.env.GOOGLE_CLIENT_ID as string,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     }),

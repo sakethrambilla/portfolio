@@ -89,10 +89,7 @@ const softwares = [
     image: "github",
     des: "Github",
   },
-  {
-    image: "github_actions",
-    des: "Github Actions",
-  },
+
   {
     image: "figma",
     des: "Figma",

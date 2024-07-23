@@ -18,6 +18,10 @@ const config = {
       },
     },
     extend: {
+      cursor: {
+        bcursor: "url(/images/cursor.png), default",
+        ocursor: "url(/images/view-work-cursor.svg), pointer",
+      },
       typography: {
         DEFAULT: {
           css: {

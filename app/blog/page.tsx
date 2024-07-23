@@ -4,8 +4,6 @@ import BlogList from "./_components/blog-list";
 import { PageProps } from "../work/page";
 
 const BlogPage = (props: PageProps) => {
-  console.log(props);
-
   return (
     <PageLayout>
       <div className="flex h-full min-h-[100vh] flex-col gap-12 px-8 lg:gap-32 lg:px-24">

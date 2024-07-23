@@ -50,7 +50,7 @@ const ParallaxScroll = () => {
 
   return (
     <div
-      className="border-box relative hidden h-[175vh] w-full gap-4 overflow-hidden bg-secondary p-4 lg:flex"
+      className="border-box cursor-workCursor relative hidden h-[175vh] w-full gap-4 overflow-hidden bg-secondary p-4 lg:flex"
       ref={gallery}
     >
       <Column

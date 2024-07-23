@@ -6,7 +6,7 @@ const text =
 
 const TextMask = () => {
   return (
-    <div>
+    <div className="cursor-ocursor">
       <TextRevealByWord text={text} />
     </div>
   );
