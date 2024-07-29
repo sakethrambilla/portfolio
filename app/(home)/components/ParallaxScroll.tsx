@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 
 const images = [
   "1.jpg",
@@ -37,23 +37,6 @@ const ParallaxScroll = () => {
   const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25]);
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3]);
 
-  useGSAP(
-    () => {
-      gsap.set(".parallax", { xPercent: -50, yPercent: -50 });
-
-      let xTo = gsap.quickTo(".parallax", "x", {
-          duration: 0.6,
-          ease: "power3",
-        }),
-        yTo = gsap.quickTo(".parallax", "y", { duration: 0.6, ease: "power3" });
-
-      window.addEventListener("mousemove", (e) => {
-        xTo(e.clientX);
-        yTo(e.clientY);
-      });
-    },
-    { scope: gallery },
-  );
   useEffect(() => {
     const resize = () => {
       setDimension({ width: window.innerWidth, height: window.innerHeight });

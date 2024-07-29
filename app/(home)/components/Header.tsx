@@ -20,7 +20,7 @@ const Header = () => {
       t1.from("#intro-slider", {
         xPercent: "-100",
 
-        duration: 1.3,
+        duration: 1,
         delay: 0.3,
       });
 
@@ -39,7 +39,7 @@ const Header = () => {
 
       t1.to("#intro-slider", {
         xPercent: "-100",
-        duration: 1.3,
+        duration: 1,
       });
       t1.from("#home", {
         opacity: 0,
